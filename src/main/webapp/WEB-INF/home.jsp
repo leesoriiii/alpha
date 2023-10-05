@@ -127,6 +127,16 @@ window.onload = function() {
 		</section>
 	</li>
 	<li class="menu-item">
+		<div class="menu-title">Alpha</div>
+		<ol class="sub-menu">
+			<li class="sub-menu-item"><a target="content" href="/alpha/fill">fill</a></li>
+			<li class="sub-menu-item"><a target="content" href="/alpha/cross">cross</a></li>
+			<li class="sub-menu-item"><a target="content" href="/alpha/race">race</a></li>
+			<li class="sub-menu-item"><a target="content" href="/alpha/zigzag">zigzag</a></li>
+			<li class="sub-menu-item"><a target="content" href="/cube5.jsp">cube</a></li>
+		</ol>
+	</li>
+	<li class="menu-item">
 		<div class="menu-title">Animation</div>
 		<ol class="sub-menu">
 			<li class="sub-menu-item"><a target="content" href="/alpha/fill">fill</a></li>

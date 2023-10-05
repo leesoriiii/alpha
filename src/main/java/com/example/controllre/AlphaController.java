@@ -67,7 +67,7 @@ public class AlphaController {
 		for(var i=0; i<20; i++) {
 			var list = new ArrayList<Alpha>();
 			for(var j=0; j<40; j++) {
-				
+				list.add(new Alpha());
 			}
 			alphas.add(list);
 		}
