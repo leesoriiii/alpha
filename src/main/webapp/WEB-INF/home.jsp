@@ -99,15 +99,20 @@ iframe {
 }
 
 </style>
+<script type="text/javascript" src="/webjars/jquery/jquery.min.js"></script>
 <script type="text/javascript">
 function resize() {
 	let iframe = document.querySelector('iframe');
 	iframe.style.height = getComputedStyle(iframe.contentDocument.documentElement).height;
 }
 
-window.onload = function() {
+/* window.onload = function() {
 	setInterval(resize, 100);
-}
+} */
+${document}.ready(function() {
+	setInterval(resize, 100);
+})
+
 </script>
 </head>
 <body>
