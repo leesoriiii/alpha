@@ -149,6 +149,7 @@ ${document}.ready(function() {
 			<li class="sub-menu-item"><a target="content" href="/alpha/race">race</a></li>
 			<li class="sub-menu-item"><a target="content" href="/alpha/zigzag">zigzag</a></li>
 			<li class="sub-menu-item"><a target="content" href="/cube5.jsp">cube</a></li>
+			<li class="sub-menu-item"><a target="content" href="/placeholder.jsp">placeholder</a></li>
 		</ol>
 	</li>
 	<li class="menu-item">

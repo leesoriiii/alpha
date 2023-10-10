@@ -127,7 +127,7 @@ function stopBtn_click(e) {
 </script>
 </head>
 <body>
-<h1 style="color:#f19292">Spring MVC + XMLHttpRequest</h1>
+<h1 style="color:#f19292">Spring MVC + XMLHttpRequest 이소리</h1>
 <hr>
 <button id="start" onclick="startBtn_click(event);">Start</button>
 <button id="clear" onclick="clearBtn_click(event);">Clear</button>
