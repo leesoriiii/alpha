@@ -7,23 +7,67 @@
 <meta charset="UTF-8">
 <title>race.jsp</title>
 <style>
+body {
+	display: flex;
+ 	flex-direction: column;
+    justify-content: center;
+	justify-content: center;
+    align-items: center;
+}
 
 #surface {
 	border-collapse: collapse;
 	font-family: monospace;
 	font-size: 1.5em;
-	background-color: red;
+	background-color: #f19292;
 	background-image: url('/img/BackgroundFront.png'), url('/img/BackgroundBack.png');
 	background-size: 100%;
 	background-repeat: no-repeat;
 	
+	
 }
 #surface td {
 	opacity: 0.7;
+	
 }
 #startBtn {
 	padding: 5px 10px;
 }
+table {
+	border: 3px solid #ffffff; 
+	border-collapse: collapse;
+	background-color: #f19292;
+	}
+
+hr {
+  border: none; /* 기본 테두리 제거 */
+  border-top: 3px dotted #f19292; /* 상단 테두리 설정 (빨간색) */
+  width: 400px; /* 가로 너비 */
+  margin: 10px 0; /* 위아래 여백 추가 (선택적) */
+}
+
+
+button {
+    margin: 0 10px; 
+    background-color: #f19292;
+    color: white;
+    border: 2px solid #f19292;
+    border-radius: 50px;
+    box-shadow: 2px 2px 4px rgba(250, 133, 133, 0.5);
+  }
+#heading{
+    color: #f19292;
+    font-size: 50px;
+    text-shadow: 2px 2px #FAD1D1;
+}
+
+#Xcount {
+	border: 3px solid #ffffff; 
+	border-collapse: collapse;
+	background-color: #f19292;
+} 
+  
+  
 </style>
 
 <script type="text/javascript">
@@ -55,7 +99,7 @@ function race(alpha) {
 	stat.tBodies[0].append(tr);
 	
 	tdNo.align = 'right';
-	tdAlpha.align = 'right';
+	tdAlpha.align = 'center';
 	tdCount.align = 'right';
 	
 	tdNo.innerText = tr.parentElement.rows.length;
@@ -69,8 +113,8 @@ function race(alpha) {
 	setTimeout(function move() {
 		
 		let td = surface.rows[alpha.line-1].cells[alpha.column-1];
-		td.style.color = "Black";
-		td.style.background = "Black";
+		td.style.color = "white";
+		td.style.background = "white";
 		
 		switch(direction) {
 		case 0: //right
@@ -142,10 +186,10 @@ section > table {
 </style> 
 </head>
 <body>
-<h1 style="color:#f19292">Ajax->fetch 활용</h1>
+<h1 id="heading">Ajax->fetch 활용</h1>
 <button id="startBtn">Start</button>
 <hr>
-<table border="1" width="400">
+<table style="color: white;" border="1" width="400">
 	<thead>
 		<tr>
 		<th>roundCount</th><th>count</th><th>ellipse</th>
@@ -161,13 +205,13 @@ section > table {
 </table>
 <hr>
 <section>
-<table id="stat" width="400" border="1">
+<table style="color: white;" id="stat" width="400" border="1">
 	<thead>
 		<tr>
 			<th>no</th><th>alpha</th><th>Roundcount</th>
 		</tr>
 	</thead>
-	<tbody align="right">
+	<tbody style="color: white;" align="right">
 	</tbody>
 </table>
 <table id="surface" onmousedown="event.preventDefault()" oncontextmenu="evevt.preventDefault();">
@@ -176,7 +220,7 @@ section > table {
 		<tr>
 		<c:forEach var="j" begin="0" end="${surface.get(i).size()-1}">
 			<c:set var="alpha" value="${surface[i][j]}"/>
-			<td style="color: black; background: black">${alpha.ch}</td>
+			<td style="color: white; background: white">${alpha.ch}</td>
 		</c:forEach>
 		</tr>
 	</c:forEach>

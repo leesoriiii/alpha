@@ -4,11 +4,32 @@
 	border-collapse: collapse;
 	font-family: monospace;
 	font-size: 1.5em;
-	box-shadow: 30px 30px 50px black;
+	box-shadow: 30px 30px 50px #f19292;
+}
+
+button {
+    margin: 0 10px; /* 버튼 사이의 간격 조절 */
+    background-color: white;
+    color: #f19292;
+    border: 2px solid white;
+    border-radius: 50px;
+    box-shadow: 2px 2px 4px rgba(250, 133, 133, 0.5);
+}
+  
+h1 {
+    color: #f19292;
+    text-shadow: 2px 2px white;
+
 }
 
 body {
-	background-image: url('/img/BackgroundFront.png'), url('/img/BackgroundBack.png');
+	background-color: #FAD1D1;
+	display: flex;
+ 	flex-direction: column;
+    justify-content: center;
+	justify-content: center;
+    align-items: center;
+	background-image: url('/media/rose.png');
 	background-size: 100%;
 	background-repeat: no-repeat, repeat;
 	background-position: top, bottom;

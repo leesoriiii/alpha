@@ -1,61 +1,32 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@ taglib prefix="c" uri="jakarta.tags.core" %>
+<%@ taglib prefix="c" uri="jakarta.tags.core" %>    
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
 <title>cross.jsp</title>
 <style type="text/css">
-* {
-margin:-100;
-padding: -100;
-}
 body {
-	background-color: #FAD1D1;
-    margin: 0; /* body의 마진을 제거 */
-    padding: 0; /* body의 패딩을 제거 */
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
-    height: 100%;
+	background-image: url('/media/alpha.png'), url('/media/small.png');
 }
-button {
-    background-color: white;
-    width:70px;
-    height:70px;
-    color: #f19292;
-    border: none;
-    border-radius: 50px;
-    box-shadow: 2px 2px 4px rgba(250, 133, 133, 0.5);
-}
-hr {
-  border: none; /* 기본 테두리 제거 */
-  border-top: 3px dotted #ffffff; 
-  width: 500px; /* 가로 너비를 100%로 설정 */
-  margin: 10px 0; /* 위아래 여백 추가 (선택적) */
-}
-#heading{
-    color: white;
-    font-size: 50px;
-    text-shadow: 2px 2px #f19292;
-}
-#surface { 
+
+#surface {
 	border-collapse: collapse;
 	font-family: monospace;
 	font-size: 150%;
 	
-	border: 20px outset #f19292;
+	border: 10px outset red;
 }
+
 #surface td {
-	opacity: 0.8;
+	opacity: 0.9;
 }
+
 </style>
 <script type="text/javascript">
-
 function sleep(millis) {
-	return new Promise(function(resolve, reject) { 
+	return new Promise(function(resolve, reject) {
 		setTimeout(resolve, millis);
 	});
 }
@@ -65,17 +36,18 @@ class Cross {
 		this.direction = parseInt(Math.random()*4);
 		this.speed = Math.random()*200 + 10;
 	}
-	
+
 	show() {
 		let td = surface.rows[this.alpha.line-1].cells[this.alpha.column-1];
 		td.style.color = this.alpha.fg;
 		td.style.background = this.alpha.bg;
 		td.innerText = this.alpha.ch;
 	}
+	
 	hide() {
 		let td = surface.rows[this.alpha.line-1].cells[this.alpha.column-1];
-		td.style.color = 'white';
-		td.style.background = 'white';
+		td.style.color = 'black';
+		td.style.background = 'black';
 	}
 	
 	move() {
@@ -113,8 +85,8 @@ class Cross {
 		
 		this.show();
 		
-		for(;;) {
-			await sleep(1000);
+		for (;;) {
+			await sleep(this.speed);
 			
 			if(!this.move())
 				break;
@@ -128,22 +100,21 @@ window.onload = () => {
 		let cross = new Cross();
 		cross.run();
 	}
-		
 }
 </script>
 </head>
 <body>
-<h1 id="heading">async/await + class</h1>
+<h1>async/await + class</h1>
 <hr>
 <button id="createBtn">Create</button>
 <hr>
-<table id="surface" onmousedown="event.preventDefault()" oncontextmenu="event.preventDefault()">
+<table id="surface" onmousedown="event.preventDefault();" oncontextmenu="event.preventDefault();">
 	<tbody>
 	<c:forEach var="i" begin="0" end="${surface.size()-1}">
 		<tr>
 		<c:forEach var="alpha" items="${surface[i]}">
-			<td style="color: #ffffff; background: #ffffff;">${alpha.ch}</td>
-		
+			<td style="color: black; background: black;">${alpha.ch}</td>
+<%-- 			<td>${alpha.ch}</td> --%>
 		</c:forEach>
 		</tr>
 	</c:forEach>

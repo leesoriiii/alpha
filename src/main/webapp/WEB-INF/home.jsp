@@ -7,7 +7,7 @@
 <title>submenu6.jsp</title>
 <link rel="stylesheet" href="/css/cube.css">
 <link rel="icon" href="favicon.png">
-
+<link href="https://hangeul.pstatic.net/hangeul_static/css/nanum-gothic-eco.css" rel="stylesheet">
 <style type="text/css">
 
 /*
@@ -31,7 +31,35 @@ li > div, li > a {
 	border: 5px solid purple;
 }
 */
+@font-face {
+    font-family: 'Dovemayo_gothic';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2302@1.1/Dovemayo_gothic.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
 
+@font-face {
+    font-family: 'IAMAPLAYER';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2307-2@1.0/IAMAPLAYER.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'HakgyoansimWoojuR';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2307-2@1.0/HakgyoansimWoojuR.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face{
+  font-family:'bitbit';
+  src:url('//cdn.df.nexon.com/img/common/font/DNFBitBit-Regular.woff'),url('//cdn.df.nexon.com/img/common/font/DNFBitBit-Regular.woff2') ;
+}
+@font-face {
+    font-family: 'Cafe24Ssurround';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2105_2@1.0/Cafe24Ssurround.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
 .menu {
 	display: flex;
 	list-style: none;
@@ -39,20 +67,32 @@ li > div, li > a {
 	align-items: flex-start;
 	
 	position: fixed;
-	width: 95%;
-	top: 10px;
-	left: 10px;
+	width: 100%;
+	top: -16px;
+	left: 0px;
 }
 
 .menu-item {
-/* 	min-width: 150px; */
 	width: 150px;
 	flex-shrink: 0;
-	background: orange;
+	background: #f19292;
 }
 
+.menu-item::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color:#f19292; /* 배경 색상을 원하는 색상으로 변경하세요 */
+  z-index: -1;
+}
+
+
 .menu-item:hover > .menu-title {
-	text-shadow: 10px 10px 5px red;
+	text-shadow: 0px 0px 20px white;
+	font-weight: bold;
 }
 
 .menu-item:hover > .sub-menu {
@@ -65,53 +105,64 @@ li > div, li > a {
 }
 
 .menu-title {
+	font-family: 'IAMAPLAYER';
 	padding: 10px;
-	font-size: 15pt;
+	font-size: 18pt;
+	color: white;
+	text-align: center;
 }
 
 .sub-menu {
+	font-family: 'Dovemayo_gothic';
 	display: none;
 	list-style: none;
 	padding-left: 0px;
 	overflow: hidden;
+	text-align: center;
+
 }
 
 .sub-menu-item {
+	color: white;
 
 }
 
 .sub-menu-item > a {
 	display: block;
 	padding: 10px;
-	font-size: 12pt;
+	font-size: 15pt;
 	text-decoration: none;
-	color: black;
+	color: white;
 }
 
 .sub-menu-item:hover > a {
-	background: red;
+	text-decoration: underline;
+	font-weight: bold;
 }
-
+body,html {
+	margin: 0px;
+}
 iframe {
 	width: 100%;
 	height: 1000px;
-	margin-top: 70px;
+	margin-top: 50px;
 }
 
 </style>
+
 <script type="text/javascript" src="/webjars/jquery/jquery.min.js"></script>
 <script type="text/javascript">
 function resize() {
-	let iframe = document.querySelector('iframe');
-	iframe.style.height = getComputedStyle(iframe.contentDocument.documentElement).height;
+	//let iframe = document.querySelector('iframe');
+	//iframe.style.height = getComputedStyle(iframe.contentDocument.documentElement).height;
 }
 
 /* window.onload = function() {
 	setInterval(resize, 100);
 } */
-${document}.ready(function() {
+$(document).ready(function() {
 	setInterval(resize, 100);
-})
+});
 
 </script>
 </head>
@@ -121,7 +172,7 @@ ${document}.ready(function() {
 	<li style="padding: 0px 20px;">
 		<section class="perspective">
 		<article class="cube">
-			<div class="base">Alpha</div>
+			<div class="base">Alpha큐브</div>
 			<div class="base front">A</div>
 			<div class="base back">B</div>
 			<div class="base left">C</div>
@@ -165,7 +216,6 @@ ${document}.ready(function() {
 		<ol class="sub-menu">
 			<li class="sub-menu-item"><a target="content" href="/dept/list">dept</a></li>
 			<li class="sub-menu-item"><a target="content" href="/emp/list">emp</a></li>
-			<li class="sub-menu-item"><a target="content" href="/salgrade/list">salgrade</a></li>
 		</ol>
 	</li>
 	<li class="menu-item">
@@ -173,8 +223,6 @@ ${document}.ready(function() {
 		<ol class="sub-menu">
 			<li class="sub-menu-item"><a target="content" href="/city/list">city</a></li>
 			<li class="sub-menu-item"><a target="content" href="/country/list">country</a></li>
-			<li class="sub-menu-item"><a target="content" href="/language/list">language</a></li>
-			<li class="sub-menu-item"><a target="content" href="/search">search</a></li>
 		</ol>
 	</li>
 	<li class="menu-item">
@@ -182,7 +230,7 @@ ${document}.ready(function() {
 	</li>
 </ul>
 </nav>
-<iframe src="/alpha/fill" 
+<iframe src="../main.jsp"
 		name="content"
 		width="100%"
 		scrolling="no"

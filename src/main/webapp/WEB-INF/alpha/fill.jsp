@@ -8,22 +8,61 @@
 <meta charset="UTF-8">
 <title>fill.jsp</title>
 <style type="text/css">
+body {
+	background-color: #FAD1D1;
+	display: flex;
+ 	flex-direction: column;
+    justify-content: center;
+	justify-content: center;
+    align-items: center;
+}
+.button-center {
+	display: flex;
+    justify-content: center;
+
+}
+
+button {
+    margin: 0 10px; /* 버튼 사이의 간격 조절 */
+    background-color: #f19292;
+    color: white;
+    border: 2px solid #f19292;
+    border-radius: 50px;
+    box-shadow: 2px 2px 4px rgba(250, 133, 133, 0.5);
+  }
+  
+hr {
+  border: none; /* 기본 테두리 제거 */
+  border-top: 3px dotted #ffffff; 
+  width: 500px; /* 가로 너비 */
+  margin: 10px 0; /* 위아래 여백 추가 (선택적) */
+}
+
 #surface { 
  	border-collapse: collapse;
 	font-family: monospace;
 	font-size: 2em;
 	border: 20px solid #f19292;
 	background: url('../media/rose.png');
+	background-size: 1200px;
 	background-repeat: no-repeat;
 }
 #surface td {
 	opacity: 0.5; 
 	text-align: center;
 	vertical-align: middle;
+	
+}
+#heading{
+    color: white;
+    font-size: 50px;
+    text-shadow: 2px 2px #f19292;
 }
 #Xcount {
-	border: 2px solid #ff8c88; 
+	color: white;
+	border: 1px solid #ffffff; 
 	border-collapse: collapse;
+	background-color: #f19292;
 }
 </style>
  <script type="text/javascript">
@@ -127,13 +166,15 @@ function stopBtn_click(e) {
 </script>
 </head>
 <body>
-<h1 style="color:#f19292">Spring MVC + XMLHttpRequest 이소리</h1>
+<h1 id="heading">Spring MVC + XMLHttpRequest 이소리</h1>
 <hr>
+<div class="button-center">
 <button id="start" onclick="startBtn_click(event);">Start</button>
 <button id="clear" onclick="clearBtn_click(event);">Clear</button>
 <button id="stop" onclick="stopBtn_click(event);">Stop</button>
+</div>
 <hr>
-<table id="Xcount" border="2px" width="500">
+<table id="Xcount" border="1px solid white" width="500">
 	<thead>
 		<th>ForCount</th><th>Count</th><th>Seconds</th>
 	</thead>

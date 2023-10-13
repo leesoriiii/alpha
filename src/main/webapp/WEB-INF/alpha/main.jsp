@@ -7,39 +7,26 @@
 <meta charset="UTF-8">
 <title>cross.jsp</title>
 <style type="text/css">
-* {
-margin:-100;
-padding: -100;
-}
 body {
-	background-color: #FAD1D1;
-    margin: 0; /* body의 마진을 제거 */
-    padding: 0; /* body의 패딩을 제거 */
-    display: flex;
-    flex-direction: column;
+	background-image:url('/media/rose.png'), url('/media/rose.png');
+	display: flex;
+ 	flex-direction: column;
+    justify-content: center;
+	justify-content: center;
     align-items: center;
-    width: 100%;
-    height: 100%;
 }
 button {
-    background-color: white;
-    width:70px;
-    height:70px;
-    color: #f19292;
-    border: none;
+    background-color: #f19292;
+    color: white;
+    border: 2px solid #f19292;
     border-radius: 50px;
     box-shadow: 2px 2px 4px rgba(250, 133, 133, 0.5);
 }
 hr {
   border: none; /* 기본 테두리 제거 */
-  border-top: 3px dotted #ffffff; 
-  width: 500px; /* 가로 너비를 100%로 설정 */
+  border-top: 3px dotted #f19292; /* 상단 테두리 설정 (빨간색) */
+  width: 50%; /* 가로 너비를 100%로 설정 */
   margin: 10px 0; /* 위아래 여백 추가 (선택적) */
-}
-#heading{
-    color: white;
-    font-size: 50px;
-    text-shadow: 2px 2px #f19292;
 }
 #surface { 
 	border-collapse: collapse;
@@ -74,8 +61,8 @@ class Cross {
 	}
 	hide() {
 		let td = surface.rows[this.alpha.line-1].cells[this.alpha.column-1];
-		td.style.color = 'white';
-		td.style.background = 'white';
+		td.style.color = 'black';
+		td.style.background = 'black';
 	}
 	
 	move() {
@@ -133,7 +120,7 @@ window.onload = () => {
 </script>
 </head>
 <body>
-<h1 id="heading">async/await + class</h1>
+<h1 style="color:#f19292">async/await + class</h1>
 <hr>
 <button id="createBtn">Create</button>
 <hr>
@@ -142,7 +129,7 @@ window.onload = () => {
 	<c:forEach var="i" begin="0" end="${surface.size()-1}">
 		<tr>
 		<c:forEach var="alpha" items="${surface[i]}">
-			<td style="color: #ffffff; background: #ffffff;">${alpha.ch}</td>
+			<td style="color: black; background: black;">${alpha.ch}</td>
 		
 		</c:forEach>
 		</tr>

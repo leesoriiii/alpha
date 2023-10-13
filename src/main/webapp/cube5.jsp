@@ -6,7 +6,13 @@
 <meta charset="UTF-8">
 <title>cube.jsp</title>
 <style type="text/css">
-
+body {
+	display: flex;
+ 	flex-direction: column;
+    justify-content: center;
+	justify-content: center;
+    align-items: center;
+}
 .perspective {
 /* 	border: 10px solid green; */
  	display: inline-block;
@@ -85,7 +91,7 @@
 </style>
 </head>
 <body>
-<h1>CSS 3D 응용 큐브 만들기</h1>
+<h1 style="color:#f19292">CSS 3D 응용 큐브 만들기</h1>
 <hr>
 <section class="perspective">
 	<article class="cube">
