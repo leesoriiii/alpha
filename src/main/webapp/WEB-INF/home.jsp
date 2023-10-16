@@ -195,11 +195,7 @@ $(document).ready(function() {
 	<li class="menu-item">
 		<div class="menu-title">Animation</div>
 		<ol class="sub-menu">
-			<li class="sub-menu-item"><a target="content" href="/alpha/fill">fill</a></li>
-			<li class="sub-menu-item"><a target="content" href="/alpha/cross">cross</a></li>
-			<li class="sub-menu-item"><a target="content" href="/alpha/race">race</a></li>
-			<li class="sub-menu-item"><a target="content" href="/alpha/zigzag">zigzag</a></li>
-			<li class="sub-menu-item"><a target="content" href="/cube5.jsp">cube</a></li>
+			<li class="sub-menu-item"><a target="content" href="/ani/fill">fill</a></li>
 			<li class="sub-menu-item"><a target="content" href="/placeholder.jsp">placeholder</a></li>
 		</ol>
 	</li>
