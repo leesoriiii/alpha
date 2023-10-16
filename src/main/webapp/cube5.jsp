@@ -7,11 +7,18 @@
 <title>cube.jsp</title>
 <style type="text/css">
 body {
+	background: linear-gradient(to bottom, #F19292, #FFFFFF);
+	background-size: 100% 100%;
+	background-repeat: no-repeat;
 	display: flex;
  	flex-direction: column;
     justify-content: center;
-	justify-content: center;
     align-items: center;
+}
+#heading{
+    color: white;
+    font-size: 50px;
+    text-shadow: 2px 2px #f19292;
 }
 .perspective {
 /* 	border: 10px solid green; */
@@ -91,7 +98,7 @@ body {
 </style>
 </head>
 <body>
-<h1 style="color:#f19292">CSS 3D 응용 큐브 만들기</h1>
+<h1 id="heading">CSS 3D 응용 큐브 만들기</h1>
 <hr>
 <section class="perspective">
 	<article class="cube">
