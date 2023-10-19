@@ -63,9 +63,7 @@ li > div, li > a {
 .menu {
 	display: flex;
 	list-style: none;
-	
 	align-items: flex-start;
-	
 	position: fixed;
 	width: 100%;
 	top: -16px;
@@ -85,8 +83,8 @@ li > div, li > a {
   left: 0;
   width: 100%;
   height: 100%;
-  background-color:#f19292; /* 배경 색상을 원하는 색상으로 변경하세요 */
   z-index: -1;
+  background-color:#f19292; /* 배경 색상을 원하는 색상으로 변경하세요 */
 }
 
 
@@ -203,7 +201,7 @@ $(document).ready(function() {
 		<div class="menu-title">React</div>
 		<ol class="sub-menu">
 			<li class="sub-menu-item"><a target="content" href="/fill.jsp">fill</a></li>
-			<li class="sub-menu-item"><a target="content" href="/fill.jsp">cross</a></li>
+			<li class="sub-menu-item"><a target="content" href="/sort.jsp">sort</a></li>
 			<li class="sub-menu-item"><a target="content" href="/fill.jsp">race</a></li>
 		</ol>
 	</li>
