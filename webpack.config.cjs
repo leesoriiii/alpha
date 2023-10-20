@@ -3,6 +3,8 @@ module.exports = {
     entry: {
         fill: "./src/fill.jsx",
         sort: "./src/sort.jsx",
+        flow: "./src/flow.jsx",
+        ping: "./src/ping.jsx",
     },
     output: {
         filename: "[name].js",

@@ -202,7 +202,8 @@ $(document).ready(function() {
 		<ol class="sub-menu">
 			<li class="sub-menu-item"><a target="content" href="/fill.jsp">fill</a></li>
 			<li class="sub-menu-item"><a target="content" href="/sort.jsp">sort</a></li>
-			<li class="sub-menu-item"><a target="content" href="/fill.jsp">race</a></li>
+			<li class="sub-menu-item"><a target="content" href="/flow.jsp">flow</a></li>
+			<li class="sub-menu-item"><a target="content" href="/ping.jsp">ping</a></li>
 		</ol>
 	</li>
 	<li class="menu-item">
