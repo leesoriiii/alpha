@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@taglib prefix="sec" uri="http://www.springframework.org/security/tags"%> 
 <!DOCTYPE html>
 <html>
 <head>
@@ -8,6 +9,7 @@
 <link rel="stylesheet" href="/css/cube.css">
 <link rel="icon" href="favicon.png">
 <link href="https://hangeul.pstatic.net/hangeul_static/css/nanum-gothic-eco.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <style type="text/css">
 
 /*
@@ -146,6 +148,19 @@ iframe {
 	margin-top: 50px;
 }
 
+.custom-icon::before {
+    content: '\f007'; /* 아이콘 유니코드 */
+    font-family: FontAwesome; /* 원하는 폰트 패밀리 사용 */
+}
+#hello {
+	font-size: 14px;
+	color: white;
+}
+/* 아이콘 스타일링 */
+.custom-icon {
+    font-size: 24px; /* 크기 설정 */
+}
+
 </style>
 
 <script type="text/javascript" src="/webjars/jquery/jquery.min.js"></script>
@@ -220,9 +235,32 @@ $(document).ready(function() {
 			<li class="sub-menu-item"><a target="content" href="/country/list">country</a></li>
 		</ol>
 	</li>
-	<li class="menu-item">
-		<div class="menu-title">Login</div>
-	</li>
+	<sec:authorize access="isAnonymous()">
+				<li class="menu-item">
+					<div class="menu-title">
+						<!-- 로그인 안했을때 마이메뉴 표시 -->
+						<div class="custom-icon"></div>
+					</div>
+					<ol class="sub-menu">
+					<li class="sub-menu-item"><a href="/login">로그인</a></li>
+				</ol>
+				</li>
+			</sec:authorize>
+			
+			<sec:authorize access="isAuthenticated()">
+				<li class="menu-item">
+					<div class="menu-title">
+						<!-- 로그인했을때 마이메뉴 표시 -->
+							<div class="custom-icon"></div>
+					</div>
+					<ol class="sub-menu">
+					<li><span id="hello"><sec:authentication property="name"/>님<br>반가워요</a></li></span>
+					<li class="sub-menu-item"><a target="content"
+						href="/accessory/hairpin">마이페이지</a></li>
+					<li class="sub-menu-item"><a href="/logout">로그아웃</a></li>
+				</ol>
+				</li>
+			</sec:authorize>
 </ul>
 </nav>
 <iframe src="../main.jsp"
